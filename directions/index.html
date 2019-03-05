@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS App</title>
+  <link rel="icon" href="https://developers.arcgis.com/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+  <script src="https://js.arcgis.com/3.27/"></script>
+  <script>
+    require([
+      "esri/map",
+      "esri/dijit/Directions",
+      "dojo/parser",
+      "dijit/layout/BorderContainer", "dijit/layout/ContentPane",
+      "dojo/domReady!"
+    ], function (Map, Directions, parser) {
+      parser.parse();
+      map = new Map("map", {
+        basemap: "streets-navigation-vector",
+        center: [-8.61024, 41.15],
+        zoom: 13
+      });
+      var directions = new Directions({
+        map: map
+      }, "dir");
+      directions.startup();
+    });
+  </script>
+</head>
+<body>
+  <div data-dojo-type="dijit/layout/BorderContainer"
+       data-dojo-props="design:'headline', gutters:false"
+       class="borderContainer">
+    <div data-dojo-type="dijit/layout/ContentPane"
+         data-dojo-props="region:'right'"
+         class="contentContainer">
+      <div id="dir"></div>
+    </div>
+    <div id="map"
+         data-dojo-type="dijit/layout/ContentPane"
+         data-dojo-props="region:'center'">
+    </div>
+  </div>
+</body>
+</html>

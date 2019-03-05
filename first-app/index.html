@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS App</title>
+  <link rel="icon" href="https://developers.arcgis.com/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+  <script src="https://js.arcgis.com/3.27/"></script>
+  <script>
+    require(["esri/map", "dojo/domReady!first-app"], function(Map) {
+      map = new Map("map", {
+        basemap: "streets-navigation-vector",
+        center: [-8.61024, 41.15],
+        zoom: 13
+      });
+    });
+  </script>
+</head>
+<body class="claro">
+  <div id="map"></div>
+</body>
+</html>

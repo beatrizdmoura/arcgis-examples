@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create a Web Map</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <script>var dojoConfig = { parseOnLoad:true };</script>
+    <script src="https://js.arcgis.com/3.27compact/"></script>
+    <script>
+      var map;
+      require([
+        "esri/map",
+        "esri/arcgis/utils",
+        "esri/dijit/Legend",
+        "dojo/domReady!"
+      ], function(Map, arcgisUtils, Legend){
+        arcgisUtils.createMap("db411ae38f5c444a9fd0ba0b672d3f19", "map").then(function (response) {
+          map = response.map;
+          var legend = new Legend({
+            map: map,
+            layerInfos:(arcgisUtils.getLegendLayers(response))
+          }, "legendDiv");
+          legend.startup();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="map"></div>
+    <div id="legendDiv"></div>
+  </body>
+</html>
