@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Create a Web Map</title>
+    <title>ArcGIS Web Map</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="https://developers.arcgis.com/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.27/esri/css/esri.css">
     <script>var dojoConfig = { parseOnLoad:true };</script>
@@ -16,7 +17,7 @@
         "esri/dijit/Legend",
         "dojo/domReady!"
       ], function(Map, arcgisUtils, Legend){
-        arcgisUtils.createMap("db411ae38f5c444a9fd0ba0b672d3f19", "map").then(function (response) {
+        arcgisUtils.createMap("db411ae38f5c444a9fd0ba0b672d3f19", "mapDiv").then(function (response) {
           map = response.map;
           var legend = new Legend({
             map: map,
@@ -27,9 +28,8 @@
       });
     </script>
   </head>
-
   <body>
-    <div id="map"></div>
+    <div id="mapDiv"></div>
     <div id="legendDiv"></div>
   </body>
 </html>

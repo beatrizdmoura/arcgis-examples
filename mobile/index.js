@@ -12,7 +12,7 @@ function createAndAddHandlers() {
 }
 
 function createMap() {
-  return new modules.Map('map', {
+  return new modules.Map('mapDiv', {
     basemap: 'streets-navigation-vector',
     center: [-8.61024, 41.15],
     zoom: 10,
@@ -53,7 +53,7 @@ function adjustMapHeight() {
   if (modules.has('iphone') || modules.has('ipod')) {
     availHeight += iphoneAdjustment();
   }
-  modules.dom.byId('map').style.height = availHeight + 'px';
+  modules.dom.byId('mapDiv').style.height = availHeight + 'px';
 }
 
 function initialize() {
