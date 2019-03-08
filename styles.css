@@ -21,6 +21,13 @@ html,body,#mapDiv,.map.container{
   left: 75px;
 }
 
+#homeButton{
+  position: absolute;
+  top:95px;
+  left: 20px;
+  z-index: 50;
+}
+
 .borderContainer {
   width:100%;
   height:100%;
