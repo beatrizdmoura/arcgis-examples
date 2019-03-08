@@ -1,4 +1,4 @@
-var modules = {}, map;
+let modules = {}, map;
 
 function createMap() {
   return new modules.Map('mapDiv', {
